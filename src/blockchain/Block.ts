@@ -1,18 +1,18 @@
 import { SHA256 } from "crypto-js";
 
 class Block {
-  index: number;
-  previousHash: any;
-  data: any;
-  timestamp: Date;
-  hash: string;
-  nonce: number;
-  difficulty: number;
+  public index: number;
+  public previousHash: any;
+  public data: any;
+  public timestamp: Date;
+  public hash: string;
+  public nonce: number;
+  public difficulty: number;
 
   constructor(
     index = 0,
     previousHash = null,
-    data = "Genesis Block",
+    data = { message: "Genesis Block" },
     difficulty = 1
   ) {
     this.index = index;

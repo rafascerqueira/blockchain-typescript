@@ -14,9 +14,14 @@ class Blockchain {
     return this.blocks[this.blocks.length - 1];
   }
 
-  addBlock(data: any) {
+  /**
+   *
+   * @param data - any data entered in the new block
+   * @param blockDifficulty - define difficulty
+   */
+  addBlock(data: any, blockDifficulty?: number) {
     const index = this.index;
-    const difficulty = this.difficulty;
+    const difficulty = blockDifficulty || this.difficulty;
     const previousHash = this.getLastBlock().hash;
 
     const block = new Block(index, previousHash, data, difficulty);
